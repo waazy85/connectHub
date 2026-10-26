@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub | Find Your Dream Home</title>
+    <meta name="description" content="ConnectHub connects buyers, renters, landlords, agents and property investors.">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#home" class="logo">Connect<span>Hub</span></a>
+        <nav class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./pages/properties.html">Properties</a>
+            <a href="./pages/about-us.html">About Us</a>
+            <a href="./pages/services.html">Services</a>
+            <a href="./pages/contact.html">Contact</a>
+        </nav>
+        <a href="#properties" class="nav-btn">Explore Properties</a>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-tag">WELCOME TO CONNECTHUB</p>
+            <h1>Find a Place You'll Love to Live.</h1>
+            <p class="hero-description">
+                Your trusted connection to homes, land, commercial
+                properties and real estate opportunities.
+                Buy, rent, sell and discover your next property with us.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#properties" class="primary-btn">Explore Properties</a>
+                <a href="#about" class="secondary-btn">Learn More</a>
+            </div>
+
+            <form class="search-box" id="property-search">
+                <div class="search-field">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location"
+                           placeholder="Enter a city or area">
+                </div>
+
+                <div class="search-field">
+                    <label for="property-type">Property Type</label>
+                    <select id="property-type" name="property-type">
+                        <option value="">All Properties</option>
+                        <option value="house">Houses</option>
+                        <option value="apartment">Apartments</option>
+                        <option value="land">Land</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+                </div>
+
+                <div class="search-field">
+                    <label for="purpose">Purpose</label>
+                    <select id="purpose" name="purpose">
+                        <option value="">Buy or Rent</option>
+                        <option value="buy">Buy</option>
+                        <option value="rent">Rent</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item"><h2>500+</h2><p>Property Listings</p></div>
+        <div class="stat-item"><h2>200+</h2><p>Happy Clients</p></div>
+        <div class="stat-item"><h2>50+</h2><p>Trusted Agents</p></div>
+        <div class="stat-item"><h2>100+</h2><p>Available Locations</p></div>
+    </section>
+
+    <section class="categories" id="categories">
+        <div class="section-heading">
+            <p class="section-tag">EXPLORE CONNECTHUB</p>
+            <h2>Find What You're Looking For</h2>
+            <p>Discover properties and opportunities that suit your needs.</p>
+        </div>
+
+        <div class="category-grid">
+            <a href="#properties" class="category-card">
+                <div class="category-icon">⌂</div>
+                <h3>Residential Homes</h3>
+                <p>Find a place to call home.</p>
+            </a>
+            <a href="#properties" class="category-card">
+                <div class="category-icon">▤</div>
+                <h3>Apartments</h3>
+                <p>Explore apartments for rent or sale.</p>
+            </a>
+            <a href="#properties" class="category-card">
+                <div class="category-icon">▧</div>
+                <h3>Land</h3>
+                <p>Discover land for your next project.</p>
+            </a>
+            <a href="#properties" class="category-card">
+                <div class="category-icon">▥</div>
+                <h3>Commercial Property</h3>
+                <p>Find spaces for your business.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="properties" id="properties">
+        <div class="section-heading">
+            <p class="section-tag">OUR PROPERTY COLLECTION</p>
+            <h2>Featured Properties</h2>
+            <p>Explore selected properties for different budgets and needs.</p>
+        </div>
+
+        <div class="property-grid">
+            <article class="property-card">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
+                     alt="Modern luxury residential house">
+                <div class="property-info">
+                    <span class="property-label">For Sale</span>
+                    <h3>Modern Family Home</h3>
+                    <p class="property-location">Lagos, Nigeria</p>
+                    <p class="property-price">₦85,000,000</p>
+                    <p>4 Bedrooms · 3 Bathrooms</p>
+                    <a href="#contact" class="property-btn">Enquire Now</a>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+                     alt="Contemporary apartment interior">
+                <div class="property-info">
+                    <span class="property-label">For Rent</span>
+                    <h3>Contemporary Apartment</h3>
+                    <p class="property-location">Port-Harcout, Nigeria</p>
+                    <p class="property-price">₦3,500,000/year</p>
+                    <p>2 Bedrooms · 2 Bathrooms</p>
+                    <a href="#contact" class="property-btn">Enquire Now</a>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+                     alt="Open plot of land surrounded by greenery">
+                <div class="property-info">
+                    <span class="property-label">Land for Sale</span>
+                    <h3>Residential Land</h3>
+                    <p class="property-location">Port-Harcout, Nigeria</p>
+                    <p class="property-price">₦15,000,000</p>
+                    <p>Suitable for residential development</p>
+                    <a href="#contact" class="property-btn">Enquire Now</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80"
+                 alt="Beautiful modern home interior">
+        </div>
+
+        <div class="about-content">
+            <p class="section-tag">ABOUT CONNECTHUB</p>
+            <h2>Connecting People to Better Property Opportunities</h2>
+            <p>ConnectHub is a property discovery platform designed to bring people and property opportunities together.</p>
+            <p>Whether you are buying your first home, searching for a rental apartment, selling land, managing properties or investing in real estate, ConnectHub helps you explore your options in one place.</p>
+            <ul>
+                <li>Discover properties in different locations</li>
+                <li>Explore buying and rental opportunities</li>
+                <li>Connect with property owners and agents</li>
+                <li>Find opportunities for residential and business use</li>
+            </ul>
+            <a href="#services" class="primary-btn">Discover Our Services</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-heading">
+            <p class="section-tag">WHAT WE OFFER</p>
+            <h2>Services for Everyone</h2>
+            <p>Helping different people find the property services they need.</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>For Buyers</h3>
+                <p>Explore homes, land and investment properties.</p>
+            </div>
+            <div class="service-card">
+                <h3>For Renters</h3>
+                <p>Find apartments and houses that suit your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>For Landlords</h3>
+                <p>Showcase rental properties and reach potential tenants.</p>
+            </div>
+            <div class="service-card">
+                <h3>For Agents</h3>
+                <p>Display property listings and connect with clients.</p>
+            </div>
+            <div class="service-card">
+                <h3>For Investors</h3>
+                <p>Discover property opportunities for future development.</p>
+            </div>
+            <div class="service-card">
+                <h3>For Businesses</h3>
+                <p>Find offices, shops and other commercial spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="cta-content">
+            <p class="section-tag">LET'S CONNECT</p>
+            <h2>Your Next Property Journey Starts Here.</h2>
+            <p>Take the next step towards finding a property that matches your needs and goals.</p>
+            <a href="mailto:hello@connecthub.com" class="primary-btn">Contact ConnectHub</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#home" class="logo">Connect<span>Hub</span></a>
+                <p>Connecting people, properties and opportunities.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="./pages/properties.html">Properties</a>
+                <a href="./pages/about-us.html">About Us</a>
+                <a href="./pages/services.html">Services</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <a href="#contact">Contact Us</a>
+                <a href="mailto:hello@connecthub.com">Email ConnectHub</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> ConnectHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

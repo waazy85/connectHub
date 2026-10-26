@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | ConnectHub</title>
+    <meta name="description" content="Contact ConnectHub for real estate enquiries, property listings, rentals, buying and selling opportunities.">
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                Connect<span>Hub</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <a href="properties.html" class="nav-btn">
+                Explore Properties
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h1>We'd Love to Hear From You</h1>
+            <p>
+                Have questions about a property? Need help finding
+                your next home? Connect with the ConnectHub team.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information and Form -->
+    <main>
+        <section class="contact-section container">
+
+            <div class="contact-info">
+                <span class="section-tag">CONTACT CONNECTHUB</span>
+                <h2>Let's Start a Conversation</h2>
+
+                <p class="info-description">
+                    Whether you want to buy, rent, sell, list a property
+                    or explore investment opportunities, we're here to help.
+                    Send us a message and tell us what you need.
+                </p>
+
+                <div class="info-card">
+                    <div class="info-icon">✉</div>
+                    <div>
+                        <h3>Email Us</h3>
+                        <a href="mailto:hello@connecthub.com">
+                            hello@connecthub.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h3>Our Location</h3>
+                        <p>Nigeria</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🏠</div>
+                    <div>
+                        <h3>Property Enquiries</h3>
+                        <p>Buying, renting, selling and listing properties</p>
+                    </div>
+                </div>
+
+                <div class="info-note">
+                    <h3>How can we help?</h3>
+                    <p>
+                        Tell us about your property needs so we can
+                        direct your enquiry appropriately.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <p class="form-description">
+                    Fill in the form below to prepare your enquiry.
+                </p>
+
+                <form id="contact-form">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Enquiry Type *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select an enquiry</option>
+                                <option value="Buying a Property">Buying a Property</option>
+                                <option value="Renting a Property">Renting a Property</option>
+                                <option value="Selling a Property">Selling a Property</option>
+                                <option value="Listing a Property">Listing a Property</option>
+                                <option value="Land and Investment">Land and Investment</option>
+                                <option value="Commercial Property">Commercial Property</option>
+                                <option value="Other Enquiry">Other Enquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="e.g. Lagos, Abuja or Ibadan">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell us how we can help you..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Send Message <span>→</span>
+                    </button>
+
+                    <p class="form-notice">
+                        Your message will open in your email application
+                        for you to review and send.
+                    </p>
+
+                    <p id="form-status" class="form-status"
+                       role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-tag">HELP CENTRE</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common ConnectHub enquiries.</p>
+                </div>
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary>Can I use ConnectHub to find a property?</summary>
+                        <p>
+                            Yes. Visit our Properties page to explore
+                            available property listings.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can landlords and agents contact ConnectHub?</summary>
+                        <p>
+                            Yes. Landlords and agents can use the contact
+                            form to enquire about property listings and
+                            opportunities to work with the platform.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I enquire about land or commercial property?</summary>
+                        <p>
+                            Yes. Select the relevant enquiry type in the
+                            contact form and provide your preferred location
+                            and requirements.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How do I send my enquiry?</summary>
+                        <p>
+                            Complete the form and select Send Message.
+                            Your default email application will open with
+                            the enquiry prepared for you to review and send.
+                        </p>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    Connect<span>Hub</span>
+                </a>
+                <p>
+                    Connecting buyers, renters, landlords, agents and
+                    investors with property opportunities.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="about-us.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <a href="mailto:hello@connecthub.com">
+                    hello@connecthub.com
+                </a>
+                <p>Nigeria</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> ConnectHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/contact.js"></script>
+</body>
+</html>

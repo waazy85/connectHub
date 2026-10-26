@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ConnectHub</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Connect<span>Hub</span></a>
+        <a href="index.html" class="back-link">← Home</a>
+    </header>
+
+    <main class="login-container">
+        <section class="login-card">
+            <div class="login-icon">⌂</div>
+            <h1>Welcome Back!</h1>
+            <p class="subtitle">Log in to your ConnectHub account.</p>
+
+            <div id="message" class="message" role="status"></div>
+
+            <form id="login-form">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email"
+                       autocomplete="email" required>
+
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password"
+                           placeholder="Enter your password"
+                           autocomplete="current-password" required
+                           minlength="6">
+                    <button type="button" id="toggle-password"
+                            class="toggle-password">Show</button>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                    <a href="#" id="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="login-button">
+                    Log In
+                </button>
+            </form>
+
+            <p class="register-text">
+                Don't have an account?
+                <a href="register.html">Create an account</a>
+            </p>
+
+            <p class="security-note">
+                Your property journey starts here.
+            </p>
+        </section>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,874 @@
+
+/* ========================================
+   CONNECTHUB - REAL ESTATE WEBSITE
+   Main stylesheet
+======================================== */
+
+/* ---------- 1. Global Styles ---------- */
+
+:root {
+    --primary: #123c32;
+    --primary-dark: #0a2922;
+    --secondary: #c9a45c;
+    --secondary-light: #e4cb91;
+    --background: #ffffff;
+    --light-bg: #f5f7f5;
+    --text: #24312c;
+    --muted: #69756f;
+    --border: #e4e9e5;
+    --white: #ffffff;
+    --shadow: 0 12px 35px rgba(15, 45, 35, 0.10);
+    --radius: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+/* ---------- 2. Navigation Bar ---------- */
+
+.navbar {
+    min-height: 82px;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
+
+/* ---------- 3. Hero Section ---------- */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 5% 110px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 30, 23, 0.90) 0%,
+            rgba(5, 30, 23, 0.72) 52%,
+            rgba(5, 30, 23, 0.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    color: var(--white);
+}
+
+.hero-content {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.hero-tag,
+.section-tag {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    max-width: 680px;
+    font-size: clamp(38px, 5.5vw, 66px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 590px;
+    font-size: 16px;
+    color: #e6ece8;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    color: var(--primary-dark);
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.primary-btn:hover {
+    background: var(--secondary-light);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.secondary-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+
+/* ---------- 4. Property Search ---------- */
+
+.search-box {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr auto;
+    align-items: end;
+    gap: 15px;
+    padding: 22px;
+    max-width: 1050px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.search-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.search-field input,
+.search-field select {
+    width: 100%;
+    min-width: 0;
+    height: 45px;
+    padding: 0 12px;
+    background: #f8faf8;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.15);
+}
+
+.search-btn {
+    height: 45px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.search-btn:hover {
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
+
+/* ---------- 5. Statistics ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 45px 5%;
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.stat-item {
+    padding: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-item h2 {
+    color: var(--secondary);
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+.stat-item p {
+    font-size: 13px;
+    color: #e0e8e3;
+}
+
+
+/* ---------- 6. Section Headings ---------- */
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.about-content h2,
+.cta h2 {
+    font-size: clamp(28px, 3.4vw, 42px);
+    line-height: 1.2;
+    color: var(--primary);
+    margin-bottom: 15px;
+    letter-spacing: -0.8px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ---------- 7. Property Categories ---------- */
+
+.categories {
+    padding: 95px 5%;
+    background: var(--light-bg);
+}
+
+.category-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.category-card {
+    display: block;
+    background: var(--white);
+    padding: 30px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.category-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    background: #f3ead6;
+    color: var(--primary);
+    border-radius: 50%;
+    font-size: 35px;
+}
+
+.category-card h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* ---------- 8. Featured Properties ---------- */
+
+.properties {
+    padding: 95px 5%;
+}
+
+.property-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.property-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.property-card > img {
+    height: 235px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 24px;
+}
+
+.property-label {
+    display: inline-block;
+    background: #e9f2ec;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 11px;
+    border-radius: 4px;
+    margin-bottom: 13px;
+}
+
+.property-info h3 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.property-location {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.property-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.property-info > p:not(.property-price):not(.property-location) {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.property-btn {
+    display: block;
+    padding: 12px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: var(--primary);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.property-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+/* ---------- 9. About Section ---------- */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 95px 7%;
+    background: var(--light-bg);
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    height: 470px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+.about-content h2 {
+    margin-bottom: 22px;
+}
+
+.about-content > p:not(.section-tag) {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style: none;
+    margin: 24px 0 30px;
+}
+
+.about-content li {
+    position: relative;
+    padding-left: 27px;
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.about-content li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+
+/* ---------- 10. Services ---------- */
+
+.services {
+    padding: 95px 5%;
+}
+
+.service-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ---------- 11. Call to Action ---------- */
+
+.cta {
+    padding: 90px 5%;
+    background:
+        linear-gradient(
+            rgba(8, 42, 32, 0.93),
+            rgba(8, 42, 32, 0.93)
+        ),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    color: var(--white);
+}
+
+.cta-content > p:not(.section-tag) {
+    color: #dce6df;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+
+/* ---------- 12. Footer ---------- */
+
+.footer {
+    padding: 65px 5% 0;
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+.footer-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 45px;
+}
+
+.footer .logo {
+    color: var(--white);
+}
+
+.footer-brand p {
+    max-width: 320px;
+    margin-top: 16px;
+    color: #c6d3cc;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-links h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+    color: var(--secondary);
+}
+
+.footer-links a {
+    color: #c6d3cc;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #c6d3cc;
+    font-size: 12px;
+}
+
+
+/* ---------- 13. Search Results ---------- */
+
+.search-results {
+    max-width: 1180px;
+    margin: 25px auto 0;
+    padding: 0 5%;
+}
+
+.search-message {
+    padding: 15px 18px;
+    background: #f3ead6;
+    border-left: 4px solid var(--secondary);
+    border-radius: 4px;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+
+/* ---------- 14. Responsive Design ---------- */
+
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .search-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .property-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about {
+        gap: 35px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .nav-btn {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 75px 5% 65px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 25px 5%;
+    }
+
+    .stat-item {
+        border-right: none;
+        padding: 18px 8px;
+    }
+
+    .stat-item h2 {
+        font-size: 27px;
+    }
+
+    .categories,
+    .properties,
+    .services {
+        padding: 65px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .category-grid,
+    .property-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .property-card > img {
+        height: 240px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        padding: 65px 5%;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .cta {
+        padding: 65px 5%;
+    }
+
+    .footer {
+        padding: 50px 5% 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

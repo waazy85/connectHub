@@ -1,0 +1,247 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+    // MOBILE NAVIGATION
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("show");
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("show");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    // COPYRIGHT YEAR
+    const yearElement = document.getElementById("current-year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // IMAGE PREVIEW
+    const imageInput = document.getElementById("property-image");
+    const imagePreview = document.getElementById("image-preview");
+    const previewImage = document.getElementById("preview-image");
+    const imageStatus = document.getElementById("image-status");
+
+    let selectedImageUrl = null;
+
+    if (imageInput) {
+        imageInput.addEventListener("change", function () {
+            const file = imageInput.files[0];
+
+            if (selectedImageUrl) {
+                URL.revokeObjectURL(selectedImageUrl);
+                selectedImageUrl = null;
+            }
+
+            imagePreview.classList.remove("visible");
+            previewImage.removeAttribute("src");
+            imageStatus.textContent = "";
+
+            if (!file) return;
+
+            const allowedTypes = [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ];
+
+            if (!allowedTypes.includes(file.type)) {
+                imageStatus.textContent =
+                    "Please select a JPG, PNG or WebP image.";
+                imageInput.value = "";
+                return;
+            }
+
+            const maxSize = 5 * 1024 * 1024;
+
+            if (file.size > maxSize) {
+                imageStatus.textContent =
+                    "Image is too large. Please choose an image under 5 MB.";
+                imageInput.value = "";
+                return;
+            }
+
+            selectedImageUrl = URL.createObjectURL(file);
+            previewImage.src = selectedImageUrl;
+            previewImage.alt = "Preview of " + file.name;
+
+            imagePreview.classList.add("visible");
+            imageStatus.textContent =
+                "Selected image: " + file.name;
+        });
+    }
+
+    // PROPERTY FORM
+    const propertyForm = document.getElementById("property-form");
+    const formMessage = document.getElementById("form-message");
+    const listingResult = document.getElementById("listing-result");
+    const listingSummary = document.getElementById("listing-summary");
+    const downloadButton = document.getElementById("download-listing");
+
+    let listingText = "";
+
+    if (propertyForm) {
+        propertyForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            formMessage.textContent = "";
+            formMessage.classList.remove("error");
+            listingResult.hidden = true;
+
+            if (!propertyForm.reportValidity()) {
+                return;
+            }
+
+            const getValue = function (id) {
+                return document.getElementById(id).value.trim();
+            };
+
+            const title = getValue("property-title");
+            const type = getValue("property-type");
+            const purpose = getValue("listing-purpose");
+            const price = Number(getValue("price"));
+            const pricePeriod = getValue("price-period");
+            const state = getValue("state");
+            const city = getValue("city");
+            const address = getValue("address");
+            const bedrooms = getValue("bedrooms");
+            const bathrooms = getValue("bathrooms");
+            const area = getValue("area");
+            const areaUnit = getValue("area-unit");
+            const description = getValue("description");
+            const ownerName = getValue("owner-name");
+            const ownerEmail = getValue("owner-email");
+            const ownerPhone = getValue("owner-phone");
+            const confirmed = document.getElementById(
+                "confirm-details"
+            ).checked;
+
+            if (!Number.isFinite(price) || price <= 0) {
+                formMessage.textContent =
+                    "Please enter a valid property price.";
+                formMessage.classList.add("error");
+                return;
+            }
+
+            if (!confirmed) {
+                formMessage.textContent =
+                    "Please confirm that your property details are accurate.";
+                formMessage.classList.add("error");
+                return;
+            }
+
+            const formattedPrice = new Intl.NumberFormat("en-NG", {
+                style: "currency",
+                currency: "NGN",
+                maximumFractionDigits: 2
+            }).format(price);
+
+            const location = [city, state]
+                .filter(Boolean)
+                .join(", ");
+
+            const propertyDetails = [
+                "CONNECTHUB PROPERTY LISTING",
+                "==========================",
+                "",
+                "Property Title: " + title,
+                "Property Type: " + type,
+                "Listing Purpose: " + purpose,
+                "Price: " + formattedPrice,
+                "Price Period: " + pricePeriod,
+                "State: " + state,
+                "City/Town: " + city,
+                "Street/Area: " + (address || "Not provided"),
+                "Bedrooms: " + (bedrooms || "Not specified"),
+                "Bathrooms: " + (bathrooms || "Not specified"),
+                "Property Size: " +
+                    (area ? area + " " + areaUnit : "Not specified"),
+                "",
+                "DESCRIPTION",
+                "-----------",
+                description,
+                "",
+                "CONTACT INFORMATION",
+                "--------------------",
+                "Owner/Agent: " + ownerName,
+                "Email: " + ownerEmail,
+                "Phone: " + ownerPhone,
+                "",
+                "Location: " + location,
+                "Image selected: " +
+                    (imageInput.files[0]
+                        ? imageInput.files[0].name
+                        : "No image uploaded"),
+                "",
+                "Status: Prepared locally; not published online.",
+                "Generated: " + new Date().toLocaleString()
+            ];
+
+            listingText = propertyDetails.join("\n");
+
+            listingSummary.textContent =
+                title + " — " + formattedPrice +
+                " (" + purpose + ")\n" +
+                "Location: " + location + "\n\n" +
+                "Your listing details have been prepared. " +
+                "Download the text file to keep a copy.";
+
+            listingResult.hidden = false;
+
+            formMessage.textContent =
+                "Success! Your property details have been prepared.";
+
+            listingResult.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+    }
+
+    // DOWNLOAD LISTING DETAILS
+    if (downloadButton) {
+        downloadButton.addEventListener("click", function () {
+            if (!listingText) return;
+
+            const file = new Blob(
+                [listingText],
+                { type: "text/plain;charset=utf-8" }
+            );
+
+            const downloadUrl = URL.createObjectURL(file);
+            const link = document.createElement("a");
+
+            link.href = downloadUrl;
+            link.download = "connecthub-property-listing.txt";
+
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+            URL.revokeObjectURL(downloadUrl);
+        });
+    }
+
+    // CLEAN UP IMAGE PREVIEW
+    window.addEventListener("beforeunload", function () {
+        if (selectedImageUrl) {
+            URL.revokeObjectURL(selectedImageUrl);
+        }
+    });
+});

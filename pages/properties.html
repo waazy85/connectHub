@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties | ConnectHub</title>
+    <link rel="stylesheet" href="../css/properties.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">Connect<span>Hub</span></a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="./properties.html" class="active">Properties</a>
+            <a href="./about-us.html">About</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <a href="#contact" class="post-btn">List Your Property</a>
+    </header>
+
+    <section class="page-hero">
+        <div>
+            <p class="eyebrow">FIND YOUR PERFECT SPACE</p>
+            <h1>Discover Properties</h1>
+            <p>Explore houses, apartments, land and commercial spaces.</p>
+        </div>
+    </section>
+
+    <main id="properties" class="container">
+        <div class="section-heading">
+            <div>
+                <h2>Available Properties</h2>
+                <p>Find a place that feels like home.</p>
+            </div>
+            <span id="result-count">6 properties</span>
+        </div>
+
+        <form class="search-panel" id="search-form">
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search by location or property name"
+            >
+
+            <select id="type-filter">
+                <option value="all">All property types</option>
+                <option value="house">Houses</option>
+                <option value="apartment">Apartments</option>
+                <option value="land">Land</option>
+                <option value="commercial">Commercial</option>
+            </select>
+
+            <select id="purpose-filter">
+                <option value="all">Buy or Rent</option>
+                <option value="sale">For Sale</option>
+                <option value="rent">For Rent</option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="property-grid" id="property-grid">
+
+            <article class="property-card"
+                data-name="modern luxury duplex"
+                data-location="lekki lagos"
+                data-type="house"
+                data-purpose="sale">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
+                         alt="Modern luxury duplex">
+                    <span class="tag">For Sale</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Lekki, Lagos</p>
+                    <h3>Modern Luxury Duplex</h3>
+                    <p class="description">Spacious home with a modern exterior and garden.</p>
+                    <div class="features">
+                        <span>🛏 4 Beds</span>
+                        <span>🛁 4 Baths</span>
+                        <span>🚗 2 Parking</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦85,000,000</div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="property-card"
+                data-name="comfortable city apartment"
+                data-location="yaba lagos"
+                data-type="apartment"
+                data-purpose="rent">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+                         alt="Comfortable city apartment">
+                    <span class="tag rent-tag">For Rent</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Yaba, Lagos</p>
+                    <h3>Comfortable City Apartment</h3>
+                    <p class="description">Bright living space in a convenient location.</p>
+                    <div class="features">
+                        <span>🛏 2 Beds</span>
+                        <span>🛁 2 Baths</span>
+                        <span>🚗 1 Parking</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦2,500,000 <small>/ year</small></div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="property-card"
+                data-name="residential estate land"
+                data-location="ibeju lekki lagos"
+                data-type="land"
+                data-purpose="sale">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+                         alt="Open plot of land">
+                    <span class="tag">For Sale</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Ibeju-Lekki, Lagos</p>
+                    <h3>Residential Estate Land</h3>
+                    <p class="description">Land suitable for your future building project.</p>
+                    <div class="features">
+                        <span>📐 500 sqm</span>
+                        <span>🏡 Residential</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦12,000,000</div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="property-card"
+                data-name="elegant family home"
+                data-location="ajah lagos"
+                data-type="house"
+                data-purpose="sale">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                         alt="Elegant family home">
+                    <span class="tag">For Sale</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Ajah, Lagos</p>
+                    <h3>Elegant Family Home</h3>
+                    <p class="description">A welcoming home with stylish architecture.</p>
+                    <div class="features">
+                        <span>🛏 3 Beds</span>
+                        <span>🛁 3 Baths</span>
+                        <span>🚗 2 Parking</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦55,000,000</div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="property-card"
+                data-name="modern office space"
+                data-location="victoria island lagos"
+                data-type="commercial"
+                data-purpose="rent">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                         alt="Modern office space">
+                    <span class="tag rent-tag">For Rent</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Victoria Island, Lagos</p>
+                    <h3>Modern Office Space</h3>
+                    <p class="description">Professional workspace for growing businesses.</p>
+                    <div class="features">
+                        <span>💼 Office</span>
+                        <span>📐 Spacious</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦8,000,000 <small>/ year</small></div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="property-card"
+                data-name="premium apartment"
+                data-location="ikeja lagos"
+                data-type="apartment"
+                data-purpose="sale">
+
+                <div class="property-image">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+                         alt="Premium apartment interior">
+                    <span class="tag">For Sale</span>
+                </div>
+
+                <div class="property-info">
+                    <p class="location">📍 Ikeja, Lagos</p>
+                    <h3>Premium Apartment</h3>
+                    <p class="description">A stylish apartment with a comfortable interior.</p>
+                    <div class="features">
+                        <span>🛏 3 Beds</span>
+                        <span>🛁 2 Baths</span>
+                        <span>🚗 1 Parking</span>
+                    </div>
+                    <div class="property-bottom">
+                        <div class="price">₦45,000,000</div>
+                        <a href="#contact" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="empty-message" hidden>No properties match your search. Try another filter.</p>
+    </main>
+
+    <section class="contact-section" id="contact">
+        <h2>Interested in a Property?</h2>
+        <p>Contact our team to ask questions or arrange a viewing.</p>
+        <a href="mailto:hello@connecthub.example">Contact ConnectHub</a>
+    </section>
+
+    <footer id="about">
+        <a href="#" class="logo">Connect<span>Hub</span></a>
+        <p>Connecting people with places and opportunities.</p>
+        <p>© 2026 ConnectHub. Demo property listings.</p>
+    </footer>
+
+    <script src="../js/properties.js"></script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>List a Property | ConnectHub</title>
+    <meta name="description" content="List your house, apartment, land or commercial property on ConnectHub.">
+
+    <link rel="stylesheet" href="list-properties.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                Connect<span>Hub</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="list-properties.html" class="active">List Property</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="properties.html" class="nav-btn">
+                View Properties
+            </a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+            <span class="section-tag">PROPERTY LISTING</span>
+            <h1>List Your Property with ConnectHub</h1>
+            <p>
+                Reach people searching for houses, apartments, land
+                and commercial properties across Nigeria.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro-section container">
+        <span class="section-tag">GROW YOUR OPPORTUNITIES</span>
+        <h2>Tell Us About Your Property</h2>
+        <p>
+            Complete the form below with accurate property information.
+            Add a photo to help potential buyers or renters understand
+            what your property offers.
+        </p>
+    </section>
+
+    <!-- LISTING FORM -->
+    <main class="container form-container">
+
+        <form id="property-form">
+
+            <!-- PROPERTY DETAILS -->
+            <section class="form-section">
+                <div class="form-section-heading">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h2>Property Information</h2>
+                        <p>Enter the basic details of your property.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="property-title">Property Title *</label>
+                        <input
+                            type="text"
+                            id="property-title"
+                            name="propertyTitle"
+                            placeholder="e.g. Modern 4-Bedroom Family Home"
+                            maxlength="100"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property-type">Property Type *</label>
+                        <select id="property-type" name="propertyType" required>
+                            <option value="">Select property type</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Land">Land</option>
+                            <option value="Commercial Property">Commercial Property</option>
+                            <option value="Office Space">Office Space</option>
+                            <option value="Shop">Shop</option>
+                            <option value="Warehouse">Warehouse</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listing-purpose">Listing Purpose *</label>
+                        <select id="listing-purpose" name="listingPurpose" required>
+                            <option value="">Select purpose</option>
+                            <option value="For Sale">For Sale</option>
+                            <option value="For Rent">For Rent</option>
+                            <option value="For Lease">For Lease</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price (₦) *</label>
+                        <input
+                            type="number"
+                            id="price"
+                            name="price"
+                            min="1"
+                            step="any"
+                            placeholder="e.g. 85000000"
+                            required>
+                        <small>Enter the amount in Nigerian naira.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price-period">Price Period</label>
+                        <select id="price-period" name="pricePeriod">
+                            <option value="Total price">Total price</option>
+                            <option value="Per month">Per month</option>
+                            <option value="Per year">Per year</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOCATION -->
+            <section class="form-section">
+                <div class="form-section-heading">
+                    <span class="step-number">02</span>
+                    <div>
+                        <h2>Property Location</h2>
+                        <p>Help people understand where the property is located.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select state</option>
+                            <option>Abia</option>
+                            <option>Adamawa</option>
+                            <option>Akwa Ibom</option>
+                            <option>Anambra</option>
+                            <option>Bauchi</option>
+                            <option>Bayelsa</option>
+                            <option>Benue</option>
+                            <option>Borno</option>
+                            <option>Cross River</option>
+                            <option>Delta</option>
+                            <option>Ebonyi</option>
+                            <option>Edo</option>
+                            <option>Ekiti</option>
+                            <option>Enugu</option>
+                            <option>FCT Abuja</option>
+                            <option>Gombe</option>
+                            <option>Imo</option>
+                            <option>Jigawa</option>
+                            <option>Kaduna</option>
+                            <option>Kano</option>
+                            <option>Katsina</option>
+                            <option>Kebbi</option>
+                            <option>Kogi</option>
+                            <option>Kwara</option>
+                            <option>Lagos</option>
+                            <option>Nasarawa</option>
+                            <option>Niger</option>
+                            <option>Ogun</option>
+                            <option>Ondo</option>
+                            <option>Osun</option>
+                            <option>Oyo</option>
+                            <option>Plateau</option>
+                            <option>Rivers</option>
+                            <option>Sokoto</option>
+                            <option>Taraba</option>
+                            <option>Yobe</option>
+                            <option>Zamfara</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City or Town *</label>
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="e.g. Lekki, Ikeja or Ibadan"
+                            required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Street or Area</label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="Enter the street or neighbourhood">
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROPERTY FEATURES -->
+            <section class="form-section">
+                <div class="form-section-heading">
+                    <span class="step-number">03</span>
+                    <div>
+                        <h2>Property Features</h2>
+                        <p>Provide details about the size and facilities.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input
+                            type="number"
+                            id="bedrooms"
+                            name="bedrooms"
+                            min="0"
+                            max="100"
+                            placeholder="e.g. 4">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input
+                            type="number"
+                            id="bathrooms"
+                            name="bathrooms"
+                            min="0"
+                            max="100"
+                            placeholder="e.g. 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Property Size</label>
+                        <input
+                            type="number"
+                            id="area"
+                            name="area"
+                            min="0"
+                            step="any"
+                            placeholder="Enter size">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area-unit">Size Unit</label>
+                        <select id="area-unit" name="areaUnit">
+                            <option value="Square metres">Square metres (m²)</option>
+                            <option value="Square feet">Square feet (ft²)</option>
+                            <option value="Plot">Plots</option>
+                            <option value="Hectares">Hectares</option>
+                            <option value="Acres">Acres</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description">Property Description *</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            minlength="20"
+                            maxlength="3000"
+                            placeholder="Describe the property, its facilities, condition and special features..."
+                            required></textarea>
+                        <small>Write at least 20 characters.</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROPERTY IMAGE -->
+            <section class="form-section">
+                <div class="form-section-heading">
+                    <span class="step-number">04</span>
+                    <div>
+                        <h2>Property Photo</h2>
+                        <p>Upload a clear image of the property.</p>
+                    </div>
+                </div>
+
+                <div class="upload-box">
+                    <label for="property-image" class="upload-label">
+                        <span class="upload-icon">📷</span>
+                        <strong>Choose a Property Image</strong>
+                        <span>JPG, PNG or WebP · Maximum 5 MB</span>
+                    </label>
+
+                    <input
+                        type="file"
+                        id="property-image"
+                        name="propertyImage"
+                        accept="image/jpeg,image/png,image/webp">
+
+                    <div id="image-preview" class="image-preview">
+                        <img id="preview-image" src="" alt="Property image preview">
+                    </div>
+
+                    <p id="image-status" class="image-status" role="status"></p>
+                </div>
+            </section>
+
+            <!-- CONTACT DETAILS -->
+            <section class="form-section">
+                <div class="form-section-heading">
+                    <span class="step-number">05</span>
+                    <div>
+                        <h2>Your Contact Information</h2>
+                        <p>Provide details for follow-up about the listing.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="owner-name">Owner or Agent Name *</label>
+                        <input
+                            type="text"
+                            id="owner-name"
+                            name="ownerName"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner-email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="owner-email"
+                            name="ownerEmail"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="owner-phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="owner-phone"
+                            name="ownerPhone"
+                            autocomplete="tel"
+                            placeholder="Enter your contact number"
+                            required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TERMS -->
+            <div class="terms-group">
+                <input
+                    type="checkbox"
+                    id="confirm-details"
+                    name="confirmDetails"
+                    required>
+
+                <label for="confirm-details">
+                    I confirm that the information I have provided is
+                    accurate and that I am authorised to submit this listing. *
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+                Prepare Property Listing <span>→</span>
+            </button>
+
+            <p class="form-notice">
+                Demo form: your listing will be prepared for review.
+                It will not be published online automatically.
+            </p>
+
+            <div id="form-message" class="form-message"
+                 role="status" aria-live="polite"></div>
+
+            <div id="listing-result" class="listing-result" hidden>
+                <h2>Property Listing Prepared</h2>
+                <p id="listing-summary"></p>
+                <button type="button" id="download-listing" class="secondary-btn">
+                    Download Listing Details
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="index.html" class="logo footer-logo">
+                    Connect<span>Hub</span>
+                </a>
+                <p>
+                    Connecting buyers, renters, landlords, agents
+                    and investors with property opportunities.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="about-us.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <a href="mailto:hello@connecthub.com">
+                    hello@connecthub.com
+                </a>
+                <p>Nigeria</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> ConnectHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/list-properties"></script>
+</body>
+</html>
